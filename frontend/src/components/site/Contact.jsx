@@ -67,8 +67,8 @@ export const Contact = () => {
 
         <div className="col-span-12 lg:col-span-7 lg:pl-12 lg:border-l border-white/10">
           <form onSubmit={onSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4" data-testid="contact-form">
-            <Input label="Full name" name="name" value={form.name} onChange={onChange} required testid="contact-input-name" />
-            <Input label="Email" name="email" type="email" value={form.email} onChange={onChange} required testid="contact-input-email" />
+            <Input label="Full name" name="name" value={form.name} onChange={onChange} testid="contact-input-name" />
+            <Input label="Email" name="email" type="email" value={form.email} onChange={onChange} testid="contact-input-email" />
             <Input label="Phone" name="phone" value={form.phone} onChange={onChange} testid="contact-input-phone" />
             <Input label="Organisation" name="company" value={form.company} onChange={onChange} testid="contact-input-company" />
 
@@ -99,7 +99,6 @@ export const Contact = () => {
                 value={form.message}
                 onChange={onChange}
                 rows={5}
-                required
                 data-testid="contact-input-message"
                 className="w-full bg-[#141414] border border-white/15 focus:border-[#FF4500] outline-none px-4 py-3 text-sm text-white resize-none"
                 placeholder="Scope, tentative timeline, estimated value..."
@@ -127,15 +126,14 @@ export const Contact = () => {
   );
 };
 
-const Input = ({ label, name, value, onChange, type = "text", required, testid }) => (
+const Input = ({ label, name, value, onChange, type = "text", testid }) => (
   <div>
-    <label className="overline block mb-2">{label}{required && " *"}</label>
+    <label className="overline block mb-2">{label}</label>
     <input
       type={type}
       name={name}
       value={value}
       onChange={onChange}
-      required={required}
       data-testid={testid}
       className="w-full bg-[#141414] border border-white/15 focus:border-[#FF4500] outline-none px-4 py-3 text-sm text-white"
     />
