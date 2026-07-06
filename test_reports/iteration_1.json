@@ -1,0 +1,34 @@
+{
+  "summary": "First-finish smoke test of PKGT single-page marketing site. Backend: /api/health, /api/company/stats, /api/contact (POST valid, POST invalid 400, GET list) all return correct data. Frontend: All 11 sections render with data-testid; hero shows company name in subtext + 4 correct stat blocks (35+, ₹60 Cr+, 13, 12+); Team has exactly 6 cards starting with 'Eng. Abhishek Kumar Gupta'; 'Abhilash Gupta' is NOT present anywhere in DOM (case-insensitive scan); all 13 projects render by default; National Highway filter narrows to 5 rows correctly; Turnover recharts chart renders with 5 bars and '16.30' appears; Contact form valid submission fires sonner success toast 'Enquiry received. Our project team will be in touch shortly.'",
+  "tested_scope": ["frontend", "backend", "integration"],
+  "passed": [
+    "GET /api/health -> 200 {status:ok}",
+    "GET /api/company/stats -> 200 with 5 turnover_series entries",
+    "POST /api/contact with empty payload -> 400 with 'Name, email and message are required'",
+    "POST /api/contact valid -> 200 with UUID id",
+    "GET /api/contact -> 200 list of inquiries",
+    "All 11 sections present (hero, about, sectors, projects, clients, research, machinery, turnover, team, contact, footer)",
+    "Hero headline + 4 stat blocks (35+, ₹60 Cr+, 13, 12+)",
+    "Company name 'M/s Pramod Kumar Gupta Thekedar' present in Hero subtext",
+    "Team: 6 cards, first = 'Eng. Abhishek Kumar Gupta'",
+    "'Abhilash Gupta' NOT present in DOM (HARD requirement met)",
+    "All 13 projects (P-01..P-13) rendered by default",
+    "project-filter-national-highway click narrows list to 5 rows (P-09..P-13)",
+    "turnover-chart present with 5 recharts bars; '16.30' visible",
+    "Contact form valid submission -> sonner toast success + POST /api/contact 200"
+  ],
+  "failed": [
+    {
+      "area": "frontend/contact-form",
+      "issue": "Submitting Contact form with empty fields shows NO validation toast. Inputs have no 'required' attribute either; clicking submit produces neither native browser validation nor a sonner error toast. Only silent no-op observed.",
+      "evidence": "Playwright: toast list empty after empty submit; name input 'required' attribute = '' (not set). Screenshot shows no error/toast/native tooltip.",
+      "priority": "LOW"
+    }
+  ],
+  "action_items": [
+    "Optional: Add client-side validation in Contact.jsx to trigger a sonner error toast (e.g. toast.error('Please fill name, email and message')) when required fields are empty, matching the PRD requirement 'submitting with empty fields shows a validation toast'."
+  ],
+  "success_rate": {"backend": "100%", "frontend": "~95%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
