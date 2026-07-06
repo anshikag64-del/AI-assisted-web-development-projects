@@ -1,0 +1,93 @@
+{
+  "theme": "dark",
+  "archetype": "4 (Swiss & High-Contrast) - Brutalist Engineering Variant",
+  "colors": {
+    "background": "#0A0A0A",
+    "surface": "#141414",
+    "primary": "#FF4500",
+    "secondary": "#27272A",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "accent_hover": "#E03E00"
+  },
+  "typography": {
+    "headings": "Clash Display",
+    "body": "Manrope",
+    "mono": "JetBrains Mono",
+    "rules": [
+      "Import Clash Display via Fontshare CDN (https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap).",
+      "Use tracking-tighter for headings > 32px.",
+      "Overlines/Labels MUST be Uppercase + Tiny + tracking-[0.2em] in JetBrains Mono.",
+      "Body text should be leading-relaxed.",
+      "Never center text by default; use left alignment for strong geometric structure."
+    ]
+  },
+  "layout_and_spacing": {
+    "grid_system": "Tactile Brutalism: Use pure HTML/Tailwind to create border-collapse style layouts with exposed grid lines (border-white/10).",
+    "bento_grid": "Mode A (Tetris Grid) for Sectors to create asymmetry and visual tension.",
+    "spacing": "Generous (p-8, p-12, p-16) inside containers. Heavy use of negative space to convey scale.",
+    "radius": "rounded-none or max rounded-sm (2px) to maintain raw geometric, structural architecture feel."
+  },
+  "components": {
+    "hero": "Full screen cinematic motion. Image overlay gradient from-black/80 via-black/40 to-transparent. Typography as interface (viewport scaled oversized headline).",
+    "navbar": "Glassmorphism 2.0 (backdrop-blur-xl bg-black/60) with 1px delicate inner stroke (border-white/10). Must not be purely transparent.",
+    "buttons": "Sharp edges, 1px solid border, high contrast. Primary CTA: bg-[#FF4500] text-white hover:bg-[#E03E00].",
+    "cards": "Flat solid background (#141414), 1px subtle border (border-white/10), no soft shadows. Hover: border-[#FF4500] transition-colors.",
+    "marquee": "Use react-fast-marquee. Implement 'Kinetic Texture' mode: massive outline text running in the background for Machinery/Engineering Capabilities section.",
+    "charts": "Use Recharts (via Shadcn) for the Turnover Growth chart (2020-21 to 2024-25). Use high-contrast colors (#FF4500 for bars/lines), stark grid lines, no soft gradients.",
+    "forms": "Customize Shadcn inputs: sharp corners (rounded-none), bg-[#141414], border-white/20, focus:border-[#FF4500].",
+    "case_studies": "Build a deep-dive UX research/insights section showcasing elevated project analytics, blueprints, and data-driven results using stark grids and high contrast."
+  },
+  "motion": {
+    "scrolling": "Install and use Lenis for smooth scrolling to give the site heavy, premium momentum.",
+    "transitions": "transition: transform 0.2s ease, opacity 0.2s ease. Avoid 'all'.",
+    "interactions": "Hover states on projects should feature fast, crisp transitions (e.g., Grayscale images switching to full color on hover, slight scale-up)."
+  },
+  "media": {
+    "hero": {
+      "url": "https://images.pexels.com/photos/8860492/pexels-photo-8860492.jpeg",
+      "description": "Aerial view of a sprawling highway interchange, conveying monumental scale."
+    },
+    "sectors": {
+      "roads_highways": {
+        "url": "https://images.unsplash.com/photo-1718634657344-3af38d7ed851",
+        "description": "Aerial view of a highway intersection at night."
+      },
+      "buildings": {
+        "url": "https://images.unsplash.com/photo-1569258592171-357ea26da4df",
+        "description": "Architectural concrete monument with raw geometry."
+      },
+      "irrigation": {
+        "url": "https://images.unsplash.com/photo-1606050309588-741702cceb9b",
+        "description": "Massive gray concrete dam under blue sky."
+      }
+    },
+    "team": {
+      "leader": {
+        "url": "https://images.pexels.com/photos/32845660/pexels-photo-32845660.jpeg",
+        "description": "Portrait of Eng. Abhishek Kumar Gupta (Second-generation leader)."
+      }
+    },
+    "projects": {
+      "generic_1": {
+        "url": "https://images.pexels.com/photos/5649554/pexels-photo-5649554.jpeg",
+        "description": "Highway bridge over water."
+      },
+      "generic_2": {
+        "url": "https://images.unsplash.com/photo-1531431057391-da7a1aabd412",
+        "description": "Aerial concrete building construction."
+      }
+    }
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: Do NOT mention the name 'Abhilash Gupta' anywhere on the site.",
+    "The primary stakeholder and second-generation leader is Eng. Abhishek Kumar Gupta.",
+    "Company name is 'M/s Pramod Kumar Gupta Thekedar'.",
+    "Install and use '@phosphor-icons/react' for all icons to maintain a high-end structural look.",
+    "All interactive elements and key text MUST include a 'data-testid' attribute (e.g., data-testid='contact-submit-button').",
+    "Avoid standard Vercel/Stripe card looks. Stick to pure HTML/Tailwind for the marketing layouts to create overlapping and asymmetry.",
+    "Do not use generic dummy text; populate the 13 completed projects and 33+ machinery items with realistic-sounding infrastructure data based on the prompt.",
+    "Client section should list government entities like PWD, NH PWD, PMGSY, UP Bridge Corp using heavy typography if logos are unavailable."
+  ]
+}
