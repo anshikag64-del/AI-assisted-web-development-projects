@@ -384,7 +384,17 @@ Return JSON with this exact shape:
         system_message="You are an expert ATS resume analyzer. Reply with strict JSON only.",
     ).with_model("anthropic", "claude-sonnet-4-5-20250929")
 
-    reply = await chat.send_message(UserMessage(text=prompt))
+    reply = None
+    last_err = None
+    for attempt in range(3):
+        try:
+            reply = await chat.send_message(UserMessage(text=prompt))
+            break
+        except Exception as e:
+            last_err = e
+            logger.warning(f"ATS attempt {attempt+1} failed: {e}")
+    if reply is None:
+        raise HTTPException(status_code=502, detail=f"AI upstream error: {last_err}")
     # Some SDKs return str, some object
     text = reply if isinstance(reply, str) else getattr(reply, "content", str(reply))
     # strip code fences if any
