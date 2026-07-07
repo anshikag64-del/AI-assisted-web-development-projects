@@ -1,0 +1,53 @@
+{
+  "theme": "LIGHT",
+  "archetype": "3 (Pastel & Soft)",
+  "domain": "Productivity and Wellness for Mothers",
+  "colors": {
+    "primary": "#7C4DFF",
+    "secondary": "#B388FF",
+    "accent": "#FFB6C1",
+    "background": "#F9FAFB",
+    "surface": "#FFFFFF",
+    "text_primary": "#111827",
+    "text_secondary": "#4B5563",
+    "success": "#4CAF50",
+    "warning": "#FFC107",
+    "error": "#F44336",
+    "border": "#E5E7EB",
+    "gradients": {
+      "hero_bg": "bg-gradient-to-br from-[#F9FAFB] via-[#F3E8FF] to-[#FFE4E6]",
+      "accent_text": "bg-clip-text text-transparent bg-gradient-to-r from-[#7C4DFF] to-[#FFB6C1]"
+    }
+  },
+  "typography": {
+    "heading_font": "Playfair Display",
+    "body_font": "Outfit",
+    "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight font-light text-gray-900",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-normal text-gray-900",
+    "h3": "text-xl sm:text-2xl font-medium text-gray-800",
+    "body": "text-base leading-relaxed text-gray-600",
+    "label": "text-xs tracking-[0.2em] uppercase font-semibold text-gray-500"
+  },
+  "spacing_and_layout": {
+    "container_padding": "p-8 md:p-12",
+    "gap": "gap-8 md:gap-12",
+    "border_radius": "rounded-3xl",
+    "shadows": {
+      "soft": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+      "hover": "shadow-[0_20px_40px_rgb(124,77,255,0.08)]"
+    }
+  },
+  "components": {
+    "cards": "bg-white rounded-3xl border border-purple-50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgb(124,77,255,0.08)] transition-all duration-300",
+    "glassmorphism": "bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(124,77,255,0.05)] backdrop-saturate-150",
+    "buttons": {
+      "primary": "bg-[#7C4DFF] text-white rounded-full px-8 py-3 font-medium hover:bg-[#651FFF] transition-colors focus:ring-2 focus:ring-[#B388FF] focus:outline-none",
+      "secondary": "bg-purple-50 text-[#7C4DFF] rounded-full px-8 py-3 font-medium hover:bg-purple-100 transition-colors"
+    }
+  },
+  "motion": {
+    "hover": "transition-all duration-300 ease-out",
+    "page_transition": "framer-motion fade and slide-up",
+    "micro_interactions": "scale-95 on active state"
+  }
+}

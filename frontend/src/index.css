@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F9FAFB;
+  color: #111827;
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    --primary: 258 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 262 100% 78%;
+    --secondary-foreground: 224 71% 4%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 351 100% 86%;
+    --accent-foreground: 224 71% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 258 100% 65%;
+    --chart-1: 258 100% 65%;
+    --chart-2: 351 100% 76%;
+    --chart-3: 262 83% 68%;
+    --chart-4: 43 96% 56%;
+    --chart-5: 142 76% 45%;
+    --radius: 1rem;
+  }
+  .dark {
+    --background: 260 25% 8%;
+    --foreground: 0 0% 98%;
+    --card: 260 20% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 260 20% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 258 100% 72%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 20% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 260 20% 18%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 351 60% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 20% 22%;
+    --input: 260 20% 22%;
+    --ring: 258 100% 72%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.dark .glass {
+  background: rgba(30, 20, 45, 0.55);
+  border: 1px solid rgba(179, 136, 255, 0.15);
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+::selection { background: #B388FF; color: white; }
+
+.scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #B388FF; border-radius: 3px; }

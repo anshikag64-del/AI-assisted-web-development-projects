@@ -1,0 +1,36 @@
+{
+  "summary": "First-finish smoke test of BloomNest AI. All 11 backend endpoints validated via curl (with Bearer token seeded in MongoDB). All frontend flows validated via Playwright: landing renders all testids, hero-start-btn redirects to auth.emergentagent.com/oauth/?redirect=...%2Fapp, cookie-injected /app dashboard shows life-balance-score=66, baby module creates 'Morning feed FE' via dialog and it appears in the list, coach starter-0 triggers streaming and msg-assistant-1 is rendered. ATS endpoint returned 500 once (LiteLLM budget-exceeded transient) but succeeded cleanly on retry with full JSON (ats_score=88, match_percent=92, matched_keywords, missing_keywords all present).",
+  "tested_scope": ["backend", "frontend", "auth", "integration"],
+  "passed": [
+    "GET /api/ -> 200 {message: 'BloomNest AI API'}",
+    "GET /api/auth/me without token -> 401",
+    "GET /api/auth/me with Bearer test session -> 200 user data",
+    "GET /api/dashboard/summary -> 200, life_balance_score=66, sub_scores has career/baby_care/health/finance/learning/sleep/stress, suggestions[5], counts",
+    "POST /api/baby/events -> 200; GET /api/baby/events returns it",
+    "DELETE /api/baby/events/{id} -> 200 ok:true",
+    "POST /api/career/jobs -> 200; GET /api/career/jobs returns it",
+    "POST /api/career/resume/upload (txt) -> 200 id/filename/size/text_extracted=true",
+    "POST /api/career/ats (retry) -> 200 with ats_score/match_percent/matched_keywords/missing_keywords (Claude Sonnet 4.5 via emergentintegrations)",
+    "POST /api/coach/chat -> SSE deltas + done event with session_id; GET /api/coach/history returns 2 messages (user+assistant persisted)",
+    "POST /api/auth/logout -> 200; subsequent /api/auth/me -> 401 Invalid session",
+    "Landing: hero-start-btn/hero-demo-btn/theme-toggle visible; feature-card-0..5, pricing-free/pro/family, faq-0..7 all present",
+    "hero-start-btn navigates to https://auth.emergentagent.com/oauth/?redirect=...%2Fapp",
+    "Cookie-injected /app: nav-dashboard/baby/career/coach, topbar-search/theme/profile, life-balance-score=66 rendered",
+    "Baby UI: baby-add-btn opens dialog, baby-form-title fills, baby-form-save persists, item appears in list",
+    "Coach UI: starter-0 click, msg-assistant-1 rendered (streaming initiated)"
+  ],
+  "failed": [
+    {
+      "area": "backend/ATS",
+      "issue": "POST /api/career/ats returned 500 on first call with LiteLLM error: 'Budget has been exceeded! Current cost: 0.0, Max budget: 0.0'. Second call succeeded cleanly. Coach chat with the same EMERGENT_LLM_KEY worked at the same time, so this appears to be a transient upstream/rate-metering flake rather than a code bug.",
+      "evidence": "Backend log: emergentintegrations.llm.chat.ChatError: Failed to generate chat completion: litellm.BadRequestError: OpenAIException - Budget has been exceeded! Current cost: 0.0, Max budget: 0.0 (server.py line 387). Retry returned full JSON with ats_score=88.",
+      "priority": "LOW"
+    }
+  ],
+  "action_items": [
+    "Optional: add one retry inside /api/career/ats to smooth over transient LiteLLM budget-metering errors, since coach/chat continued to work with the same key."
+  ],
+  "success_rate": {"backend": "100% (11/11 after 1 retry on ATS)", "frontend": "100% (landing + auth redirect + dashboard + baby CRUD + coach stream)"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
