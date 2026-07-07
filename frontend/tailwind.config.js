@@ -58,8 +58,8 @@ module.exports = {
         'shimmer': 'shimmer 3s linear infinite',
       },
       backgroundImage: {
-        'bloom-hero': 'linear-gradient(135deg, #F9FAFB 0%, #F3E8FF 50%, #FFE4E6 100%)',
-        'bloom-radial': 'radial-gradient(circle at 20% 20%, rgba(179,136,255,0.35), transparent 50%), radial-gradient(circle at 80% 30%, rgba(255,182,193,0.35), transparent 50%)',
+        'bloom-hero': 'linear-gradient(135deg, #EDE4FF 0%, #E5D6FF 45%, #FFD9E0 100%)',
+        'bloom-radial': 'radial-gradient(circle at 20% 20%, rgba(124,77,255,0.28), transparent 55%), radial-gradient(circle at 80% 30%, rgba(255,138,168,0.28), transparent 55%)',
       },
     },
   },

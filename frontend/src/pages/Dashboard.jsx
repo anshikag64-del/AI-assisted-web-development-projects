@@ -42,7 +42,7 @@ const Ring = ({ value = 0, size = 140, stroke = 12, label = "", sub = "" }) => {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <div className="font-display text-4xl leading-none">{value}</div>
-        {label && <div className="text-xs text-gray-500 mt-1">{label}</div>}
+        {label && <div className="text-xs text-[#5B5476] mt-1">{label}</div>}
         {sub && <div className="text-[10px] text-gray-400">{sub}</div>}
       </div>
     </div>
@@ -69,24 +69,24 @@ export default function Dashboard() {
       {/* Greeting */}
       <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="pt-2">
         <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">Good morning</div>
-        <h1 className="font-display text-4xl sm:text-5xl mt-1 text-gray-900 dark:text-white">
+        <h1 className="font-display text-4xl sm:text-5xl mt-1 text-[#1F1B2E] dark:text-white">
           Hi {data?.user?.name?.split(" ")[0] || "there"} — here's your gentle plan.
         </h1>
       </motion.div>
 
       {/* Life Balance + AI Suggestion */}
       <div className="grid lg:grid-cols-3 gap-6">
-        <Card className="lg:col-span-2 rounded-3xl p-8 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+        <Card className="lg:col-span-2 rounded-3xl p-8 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Life Balance Score</div>
+              <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Life Balance Score</div>
               <div className="mt-2 flex items-end gap-2">
-                <div data-testid="life-balance-score" className="font-display text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#7C4DFF] to-[#FFB6C1]">
+                <div data-testid="life-balance-score" className="font-display text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#5B21D6] to-[#DB2777]">
                   {data?.life_balance_score ?? "—"}
                 </div>
-                <div className="text-gray-500 mb-2">/100</div>
+                <div className="text-[#5B5476] mb-2">/100</div>
               </div>
-              <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-md">A gentle blend of your career, baby, health, learning, finances, sleep and stress today.</p>
+              <p className="mt-3 text-[#3F3A5A] dark:text-gray-300 max-w-md">A gentle blend of your career, baby, health, learning, finances, sleep and stress today.</p>
             </div>
             <Ring value={data?.life_balance_score ?? 0} label="Today" />
           </div>
@@ -105,7 +105,7 @@ export default function Dashboard() {
                   <Icon className="w-4 h-4 text-[#7C4DFF]" />
                   <span className="font-display text-xl">{sub[k] ?? "—"}</span>
                 </div>
-                <div className="mt-2 text-xs text-gray-500">{label}</div>
+                <div className="mt-2 text-xs text-[#5B5476]">{label}</div>
                 <Progress value={sub[k] ?? 0} className="mt-2 h-1.5" />
               </div>
             ))}
@@ -129,46 +129,46 @@ export default function Dashboard() {
 
       {/* Widgets row */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+        <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
           <div className="flex items-center justify-between">
-            <span className="text-xs uppercase tracking-[0.25em] text-gray-500">Streak</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Streak</span>
             <Flame className="w-4 h-4 text-[#FFB6C1]" />
           </div>
-          <div className="mt-3 font-display text-4xl">7 <span className="text-lg text-gray-500">days</span></div>
-          <div className="mt-1 text-sm text-gray-500">Small steps, big love.</div>
+          <div className="mt-3 font-display text-4xl">7 <span className="text-lg text-[#5B5476]">days</span></div>
+          <div className="mt-1 text-sm text-[#5B5476]">Small steps, big love.</div>
         </Card>
-        <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+        <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
           <div className="flex items-center justify-between">
-            <span className="text-xs uppercase tracking-[0.25em] text-gray-500">Water</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Water</span>
             <Droplet className="w-4 h-4 text-[#7C4DFF]" />
           </div>
-          <div className="mt-3 font-display text-4xl">6 <span className="text-lg text-gray-500">/ 8 cups</span></div>
+          <div className="mt-3 font-display text-4xl">6 <span className="text-lg text-[#5B5476]">/ 8 cups</span></div>
           <Progress value={75} className="mt-3 h-1.5" />
         </Card>
-        <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+        <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
           <div className="flex items-center justify-between">
-            <span className="text-xs uppercase tracking-[0.25em] text-gray-500">Applied Jobs</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Applied Jobs</span>
             <Briefcase className="w-4 h-4 text-[#7C4DFF]" />
           </div>
           <div className="mt-3 font-display text-4xl">{data?.counts?.jobs ?? 0}</div>
-          <div className="mt-1 text-sm text-gray-500">This month</div>
+          <div className="mt-1 text-sm text-[#5B5476]">This month</div>
         </Card>
-        <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+        <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
           <div className="flex items-center justify-between">
-            <span className="text-xs uppercase tracking-[0.25em] text-gray-500">Baby log</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Baby log</span>
             <Baby className="w-4 h-4 text-[#FFB6C1]" />
           </div>
           <div className="mt-3 font-display text-4xl">{data?.counts?.baby_events ?? 0}</div>
-          <div className="mt-1 text-sm text-gray-500">Events tracked</div>
+          <div className="mt-1 text-sm text-[#5B5476]">Events tracked</div>
         </Card>
       </div>
 
       {/* Charts */}
       <div className="grid lg:grid-cols-3 gap-6">
-        <Card className="lg:col-span-2 rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+        <Card className="lg:col-span-2 rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
           <div className="flex items-center justify-between">
             <div>
-              <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Weekly productivity</div>
+              <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Weekly productivity</div>
               <div className="font-display text-2xl mt-1">A gentle rhythm</div>
             </div>
             <Badge className="rounded-full bg-purple-100 text-[#7C4DFF] border-0">+8% vs last week</Badge>
@@ -192,8 +192,8 @@ export default function Dashboard() {
           </div>
         </Card>
 
-        <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
-          <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Baby sleep pattern</div>
+        <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
+          <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Baby sleep pattern</div>
           <div className="font-display text-2xl mt-1">Hours per night</div>
           <div className="mt-4 h-40">
             <ResponsiveContainer width="100%" height="100%">
@@ -209,12 +209,12 @@ export default function Dashboard() {
 
       {/* Calendar + Upcoming */}
       <div className="grid lg:grid-cols-3 gap-6">
-        <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-gray-500"><CalIcon className="w-4 h-4" /> Calendar</div>
+        <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#5B5476]"><CalIcon className="w-4 h-4" /> Calendar</div>
           <Calendar mode="single" selected={date} onSelect={setDate} className="mt-2 rounded-2xl" />
         </Card>
-        <Card className="lg:col-span-2 rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
-          <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Upcoming</div>
+        <Card className="lg:col-span-2 rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
+          <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Upcoming</div>
           <div className="font-display text-2xl mt-1">What's on the horizon</div>
           <div className="mt-4 space-y-3">
             {(data?.upcoming?.length ? data.upcoming : [
@@ -224,8 +224,8 @@ export default function Dashboard() {
             ]).slice(0, 6).map((u, i) => (
               <div key={i} className="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-purple-50 to-pink-50 dark:from-white/5 dark:to-white/0 border border-purple-100 dark:border-white/10">
                 <div>
-                  <div className="font-medium text-gray-900 dark:text-white">{u.title}</div>
-                  <div className="text-xs text-gray-500 mt-0.5 capitalize">{u.kind}</div>
+                  <div className="font-medium text-[#1F1B2E] dark:text-white">{u.title}</div>
+                  <div className="text-xs text-[#5B5476] mt-0.5 capitalize">{u.kind}</div>
                 </div>
                 <div className="text-sm text-[#7C4DFF] font-medium">{u.scheduled_at}</div>
               </div>

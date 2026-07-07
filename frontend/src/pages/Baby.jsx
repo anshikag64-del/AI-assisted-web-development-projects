@@ -67,8 +67,8 @@ export default function Baby() {
       <div className="flex flex-wrap items-end justify-between gap-4 pt-2">
         <div>
           <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">Little one</div>
-          <h1 className="font-display text-4xl sm:text-5xl mt-1 text-gray-900 dark:text-white">Baby care, gently tracked.</h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-xl">Feeding, sleep, vaccinations, medicine, growth and milestones — all in one calm place.</p>
+          <h1 className="font-display text-4xl sm:text-5xl mt-1 text-[#1F1B2E] dark:text-white">Baby care, gently tracked.</h1>
+          <p className="mt-2 text-[#3F3A5A] dark:text-gray-300 max-w-xl">Feeding, sleep, vaccinations, medicine, growth and milestones — all in one calm place.</p>
         </div>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
@@ -99,8 +99,8 @@ export default function Baby() {
 
       {/* Growth chart */}
       {growthData.length > 1 && (
-        <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
-          <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Growth</div>
+        <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
+          <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Growth</div>
           <div className="font-display text-2xl mt-1">Trend over recent entries</div>
           <div className="mt-4 h-56">
             <ResponsiveContainer width="100%" height="100%">
@@ -117,8 +117,8 @@ export default function Baby() {
       )}
 
       {/* Timeline */}
-      <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
-        <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Timeline</div>
+      <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
+        <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Timeline</div>
         <div className="font-display text-2xl mt-1">Recent entries</div>
         {events.length === 0 ? (
           <div className="mt-8 text-center py-12">
@@ -126,7 +126,7 @@ export default function Baby() {
               <BabyIcon className="w-8 h-8 text-white" />
             </div>
             <div className="font-display text-xl mt-4">Your baby's journey starts here</div>
-            <p className="text-gray-500 mt-1">Log your first event to see the timeline bloom.</p>
+            <p className="text-[#5B5476] mt-1">Log your first event to see the timeline bloom.</p>
           </div>
         ) : (
           <div className="mt-6 space-y-3">
@@ -140,11 +140,11 @@ export default function Baby() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="font-medium text-gray-900 dark:text-white">{e.title}</span>
+                      <span className="font-medium text-[#1F1B2E] dark:text-white">{e.title}</span>
                       <Badge variant="secondary" className="rounded-full text-[10px] capitalize">{e.kind}</Badge>
                       {e.value != null && <Badge className="rounded-full bg-purple-100 text-[#7C4DFF] border-0 text-[10px]">{e.value}</Badge>}
                     </div>
-                    {e.notes && <div className="text-sm text-gray-500 mt-0.5 truncate">{e.notes}</div>}
+                    {e.notes && <div className="text-sm text-[#5B5476] mt-0.5 truncate">{e.notes}</div>}
                   </div>
                   <div className="text-xs text-gray-400 hidden sm:block">{new Date(e.created_at).toLocaleDateString()}</div>
                   <button data-testid={`baby-del-${e.id}`} onClick={() => remove(e.id)} className="text-gray-400 hover:text-red-500 p-2" aria-label="Delete">

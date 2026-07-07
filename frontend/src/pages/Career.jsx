@@ -89,8 +89,8 @@ export default function Career() {
     <div className="space-y-6 max-w-7xl mx-auto">
       <div className="pt-2">
         <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">Career hub</div>
-        <h1 className="font-display text-4xl sm:text-5xl mt-1 text-gray-900 dark:text-white">Your career, quietly compounding.</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-xl">Upload your resume, get an AI ATS analysis, generate cover letters and track opportunities.</p>
+        <h1 className="font-display text-4xl sm:text-5xl mt-1 text-[#1F1B2E] dark:text-white">Your career, quietly compounding.</h1>
+        <p className="mt-2 text-[#3F3A5A] dark:text-gray-300 max-w-xl">Upload your resume, get an AI ATS analysis, generate cover letters and track opportunities.</p>
       </div>
 
       <Tabs defaultValue="ats" className="w-full">
@@ -102,14 +102,14 @@ export default function Career() {
 
         <TabsContent value="ats" className="mt-6">
           <div className="grid lg:grid-cols-2 gap-6">
-            <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
-              <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Resume</div>
+            <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
+              <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Resume</div>
               {resume ? (
                 <div className="mt-4 flex items-center gap-3 p-4 rounded-2xl bg-purple-50 dark:bg-white/5">
                   <FileText className="w-6 h-6 text-[#7C4DFF]" />
                   <div className="flex-1 min-w-0">
                     <div className="font-medium truncate">{resume.original_filename}</div>
-                    <div className="text-xs text-gray-500">{(resume.size/1024).toFixed(1)} KB · uploaded {new Date(resume.created_at).toLocaleDateString()}</div>
+                    <div className="text-xs text-[#5B5476]">{(resume.size/1024).toFixed(1)} KB · uploaded {new Date(resume.created_at).toLocaleDateString()}</div>
                   </div>
                   <Button data-testid="resume-replace-btn" variant="outline" size="sm" onClick={() => fileRef.current?.click()} className="rounded-full">Replace</Button>
                 </div>
@@ -121,13 +121,13 @@ export default function Career() {
                 >
                   <UploadCloud className="w-8 h-8 mx-auto text-[#7C4DFF]" />
                   <div className="mt-3 font-display text-xl">Upload your resume</div>
-                  <div className="text-sm text-gray-500 mt-1">PDF, DOCX or TXT — we'll extract the text.</div>
+                  <div className="text-sm text-[#5B5476] mt-1">PDF, DOCX or TXT — we'll extract the text.</div>
                 </button>
               )}
               <input ref={fileRef} type="file" accept=".pdf,.txt,.docx" hidden onChange={handleFile} data-testid="resume-file-input" />
               {uploading && <div className="mt-3 text-sm text-[#7C4DFF]">Uploading…</div>}
 
-              <div className="mt-6 text-xs uppercase tracking-[0.25em] text-gray-500">Job description</div>
+              <div className="mt-6 text-xs uppercase tracking-[0.25em] text-[#5B5476]">Job description</div>
               <Textarea
                 data-testid="ats-jd-input"
                 value={jd}
@@ -138,13 +138,13 @@ export default function Career() {
               <Button data-testid="ats-analyze-btn" disabled={analyzing || !resume} onClick={analyze} className="mt-4 rounded-full bg-[#7C4DFF] hover:bg-[#651FFF] w-full">
                 <Sparkles className="w-4 h-4 mr-2" /> {analyzing ? "Analyzing…" : "Analyze with AI"}
               </Button>
-              {!resume && <div className="mt-2 text-xs text-gray-500 text-center">Upload a resume to enable analysis</div>}
+              {!resume && <div className="mt-2 text-xs text-[#5B5476] text-center">Upload a resume to enable analysis</div>}
             </Card>
 
-            <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10 min-h-[400px]">
-              <div className="text-xs uppercase tracking-[0.25em] text-gray-500">ATS Report</div>
+            <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10 min-h-[400px]">
+              <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">ATS Report</div>
               {!ats && !analyzing && (
-                <div className="mt-16 text-center text-gray-500">
+                <div className="mt-16 text-center text-[#5B5476]">
                   <Sparkles className="w-8 h-8 mx-auto text-purple-300" />
                   <p className="mt-3">Your beautiful AI ATS report will appear here.</p>
                 </div>
@@ -152,7 +152,7 @@ export default function Career() {
               {analyzing && (
                 <div className="mt-16 text-center">
                   <div className="w-12 h-12 rounded-full border-4 border-purple-100 border-t-[#7C4DFF] animate-spin mx-auto" />
-                  <p className="mt-4 text-gray-500">Reading between the lines…</p>
+                  <p className="mt-4 text-[#5B5476]">Reading between the lines…</p>
                 </div>
               )}
               {ats && (
@@ -170,7 +170,7 @@ export default function Career() {
                   <div className="italic text-gray-700 dark:text-gray-200">"{ats.one_line_summary}"</div>
                   {ats.matched_keywords?.length > 0 && (
                     <div>
-                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-2">Matched keywords</div>
+                      <div className="text-xs uppercase tracking-widest text-[#5B5476] mb-2">Matched keywords</div>
                       <div className="flex flex-wrap gap-2">
                         {ats.matched_keywords.map((k) => <Badge key={k} className="rounded-full bg-green-100 text-green-700 border-0">{k}</Badge>)}
                       </div>
@@ -178,7 +178,7 @@ export default function Career() {
                   )}
                   {ats.missing_keywords?.length > 0 && (
                     <div>
-                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-2">Missing keywords</div>
+                      <div className="text-xs uppercase tracking-widest text-[#5B5476] mb-2">Missing keywords</div>
                       <div className="flex flex-wrap gap-2">
                         {ats.missing_keywords.map((k) => <Badge key={k} className="rounded-full bg-red-50 text-red-600 border-0">{k}</Badge>)}
                       </div>
@@ -186,19 +186,19 @@ export default function Career() {
                   )}
                   {ats.strengths?.length > 0 && (
                     <div>
-                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-2">Strengths</div>
+                      <div className="text-xs uppercase tracking-widest text-[#5B5476] mb-2">Strengths</div>
                       <ul className="space-y-1 text-sm">{ats.strengths.map((s, i) => <li key={i}>✨ {s}</li>)}</ul>
                     </div>
                   )}
                   {ats.improvements?.length > 0 && (
                     <div>
-                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-2">Improvements</div>
+                      <div className="text-xs uppercase tracking-widest text-[#5B5476] mb-2">Improvements</div>
                       <ul className="space-y-1 text-sm">{ats.improvements.map((s, i) => <li key={i}>💡 {s}</li>)}</ul>
                     </div>
                   )}
                   {ats.recommended_skills?.length > 0 && (
                     <div>
-                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-2">Skills to learn</div>
+                      <div className="text-xs uppercase tracking-widest text-[#5B5476] mb-2">Skills to learn</div>
                       <div className="flex flex-wrap gap-2">
                         {ats.recommended_skills.map((k) => <Badge key={k} className="rounded-full bg-purple-100 text-[#7C4DFF] border-0">{k}</Badge>)}
                       </div>
@@ -212,8 +212,8 @@ export default function Career() {
 
         <TabsContent value="cover" className="mt-6">
           <div className="grid lg:grid-cols-2 gap-6">
-            <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
-              <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Job description</div>
+            <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
+              <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Job description</div>
               <Textarea
                 data-testid="cover-jd-input"
                 value={jd}
@@ -225,9 +225,9 @@ export default function Career() {
                 <Sparkles className="w-4 h-4 mr-2" /> {coverLoading ? "Writing…" : "Generate cover letter"}
               </Button>
             </Card>
-            <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+            <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
               <div className="flex items-center justify-between">
-                <div className="text-xs uppercase tracking-[0.25em] text-gray-500">Cover letter</div>
+                <div className="text-xs uppercase tracking-[0.25em] text-[#5B5476]">Cover letter</div>
                 {cover && (
                   <Button data-testid="cover-copy-btn" size="sm" variant="outline" onClick={() => { navigator.clipboard.writeText(cover); toast.success("Copied"); }} className="rounded-full">
                     <Copy className="w-3 h-3 mr-2" /> Copy
@@ -243,7 +243,7 @@ export default function Career() {
 
         <TabsContent value="jobs" className="mt-6">
           <div className="flex items-center justify-between">
-            <div className="text-sm text-gray-500">{jobs.length} tracked</div>
+            <div className="text-sm text-[#5B5476]">{jobs.length} tracked</div>
             <Dialog open={jobOpen} onOpenChange={setJobOpen}>
               <DialogTrigger asChild>
                 <Button data-testid="job-add-btn" className="rounded-full bg-[#7C4DFF] hover:bg-[#651FFF]"><Plus className="w-4 h-4 mr-2" /> Add job</Button>
@@ -267,22 +267,22 @@ export default function Career() {
           </div>
           <div className="mt-6 grid md:grid-cols-2 gap-4">
             {jobs.length === 0 && (
-              <Card className="md:col-span-2 rounded-3xl p-10 text-center bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+              <Card className="md:col-span-2 rounded-3xl p-10 text-center bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
                 <Briefcase className="w-10 h-10 mx-auto text-purple-300" />
                 <div className="font-display text-xl mt-4">Your opportunities begin here</div>
-                <p className="text-sm text-gray-500 mt-1">Add the first job you're excited about.</p>
+                <p className="text-sm text-[#5B5476] mt-1">Add the first job you're excited about.</p>
               </Card>
             )}
             {jobs.map((j) => (
-              <Card key={j.id} data-testid={`job-card-${j.id}`} className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10">
+              <Card key={j.id} data-testid={`job-card-${j.id}`} className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10">
                 <div className="flex items-start justify-between">
                   <div>
                     <div className="font-display text-xl">{j.role}</div>
-                    <div className="text-sm text-gray-500">{j.company}</div>
+                    <div className="text-sm text-[#5B5476]">{j.company}</div>
                   </div>
                   <Badge className={`rounded-full border-0 ${STATUS_COLORS[j.status] || "bg-gray-100"}`}>{j.status}</Badge>
                 </div>
-                {j.notes && <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">{j.notes}</p>}
+                {j.notes && <p className="mt-3 text-sm text-[#3F3A5A] dark:text-gray-300">{j.notes}</p>}
                 <div className="mt-4 text-xs text-gray-400">{new Date(j.created_at).toLocaleDateString()}</div>
               </Card>
             ))}

@@ -75,11 +75,11 @@ export default function AICoach() {
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="pt-2">
         <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">AI Life Coach</div>
-        <h1 className="font-display text-4xl sm:text-5xl mt-1 text-gray-900 dark:text-white">A calm voice, always here.</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-xl">Powered by Claude Sonnet 4.5 — trained to listen first, and gently guide.</p>
+        <h1 className="font-display text-4xl sm:text-5xl mt-1 text-[#1F1B2E] dark:text-white">A calm voice, always here.</h1>
+        <p className="mt-2 text-[#3F3A5A] dark:text-gray-300 max-w-xl">Powered by Claude Sonnet 4.5 — trained to listen first, and gently guide.</p>
       </div>
 
-      <Card className="rounded-3xl p-4 sm:p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10 min-h-[60vh] flex flex-col">
+      <Card className="rounded-3xl p-4 sm:p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10 min-h-[60vh] flex flex-col">
         <div className="flex-1 overflow-y-auto scrollbar-thin space-y-4 pr-2">
           {messages.length === 0 && (
             <div className="text-center py-14">
@@ -87,7 +87,7 @@ export default function AICoach() {
                 <MessageCircleHeart className="w-8 h-8 text-white" />
               </div>
               <div className="font-display text-2xl mt-4">Hi, I'm here. How are you feeling today?</div>
-              <p className="text-gray-500 mt-1">Try one of these to start:</p>
+              <p className="text-[#5B5476] mt-1">Try one of these to start:</p>
               <div className="mt-5 flex flex-wrap gap-2 justify-center max-w-2xl mx-auto">
                 {STARTERS.map((s, i) => (
                   <button

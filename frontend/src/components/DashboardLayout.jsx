@@ -56,7 +56,7 @@ export default function DashboardLayout() {
                       `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-medium transition-all ${
                         isActive
                           ? "bg-gradient-to-r from-[#7C4DFF] to-[#B388FF] text-white shadow-[0_10px_30px_-10px_rgba(124,77,255,0.6)]"
-                          : "text-gray-600 dark:text-gray-300 hover:bg-white/60 dark:hover:bg-white/5"
+                          : "text-[#3F3A5A] dark:text-gray-300 hover:bg-white/80 dark:hover:bg-white/5"
                       }`
                     }
                   >
@@ -65,8 +65,8 @@ export default function DashboardLayout() {
                 );
               })}
             </nav>
-            <div className="glass rounded-3xl p-4 text-xs text-gray-500">
-              <div className="font-display text-base text-gray-800 dark:text-gray-200">You're doing great. 🌸</div>
+            <div className="glass rounded-3xl p-4 text-xs text-[#5B5476]">
+              <div className="font-display text-base text-[#2A2540] dark:text-gray-200">You're doing great. 🌸</div>
               <div className="mt-1">Small steps, big love.</div>
             </div>
           </aside>
@@ -77,8 +77,8 @@ export default function DashboardLayout() {
             <div className="sticky top-0 z-30 p-4">
               <div className="glass rounded-full px-4 py-2 flex items-center gap-3">
                 <div className="hidden sm:flex items-center flex-1 gap-2 px-3">
-                  <Search className="w-4 h-4 text-gray-400" />
-                  <Input data-testid="topbar-search" placeholder="Search across your life…" className="border-0 bg-transparent focus-visible:ring-0 shadow-none" />
+                  <Search className="w-4 h-4 text-[#7C4DFF]" />
+                  <Input data-testid="topbar-search" placeholder="Search across your life…" className="border-0 bg-transparent focus-visible:ring-0 shadow-none placeholder:text-[#8B84A8]" />
                 </div>
                 <div className="flex-1 sm:hidden" />
                 <button data-testid="topbar-notifications" className="w-9 h-9 rounded-full bg-white/70 dark:bg-white/10 flex items-center justify-center" aria-label="Notifications">
@@ -102,7 +102,7 @@ export default function DashboardLayout() {
                   <DropdownMenuContent align="end" className="rounded-2xl">
                     <DropdownMenuLabel>
                       <div className="font-display text-base">{user?.name}</div>
-                      <div className="text-xs text-gray-500 font-normal">{user?.email}</div>
+                      <div className="text-xs text-[#5B5476] font-normal">{user?.email}</div>
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem data-testid="menu-logout" onClick={handleLogout} className="text-red-500">

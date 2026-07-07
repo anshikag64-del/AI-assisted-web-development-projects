@@ -89,7 +89,7 @@ export default function Landing() {
                 </div>
                 <span className="font-display text-xl tracking-tight">BloomNest AI</span>
               </div>
-              <div className="hidden md:flex items-center gap-8 text-sm text-gray-600 dark:text-gray-300">
+              <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#3F3A5A] dark:text-gray-300">
                 <a href="#features" className="hover:text-[#7C4DFF] transition-colors">Features</a>
                 <a href="#pricing" className="hover:text-[#7C4DFF] transition-colors">Pricing</a>
                 <a href="#faq" className="hover:text-[#7C4DFF] transition-colors">FAQ</a>
@@ -119,10 +119,10 @@ export default function Landing() {
               <Badge variant="secondary" className="rounded-full px-4 py-1 bg-white/70 dark:bg-white/10 border border-white/50 text-[#7C4DFF] dark:text-[#B388FF]">
                 <Sparkles className="w-3.5 h-3.5 mr-2" /> The AI Operating System for Mothers
               </Badge>
-              <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-gray-900 dark:text-white font-light">
-                Ambitious mothers deserve an <em className="italic bg-clip-text text-transparent bg-gradient-to-r from-[#7C4DFF] to-[#FFB6C1]">intelligent</em> assistant.
+              <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[#1F1B2E] dark:text-white font-normal">
+                Ambitious mothers deserve an <em className="italic bg-clip-text text-transparent bg-gradient-to-r from-[#5B21D6] to-[#DB2777]">intelligent</em> assistant.
               </h1>
-              <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+              <p className="mt-6 text-lg text-[#3F3A5A] dark:text-gray-300 leading-relaxed max-w-2xl">
                 Manage your baby, your career, your health, your finances, and your family from one beautifully calm dashboard — powered by AI that actually understands your life.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
@@ -133,7 +133,7 @@ export default function Landing() {
                   <PlayCircle className="mr-2 w-4 h-4" /> Watch Demo
                 </Button>
               </div>
-              <div className="mt-8 flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+              <div className="mt-8 flex items-center gap-3 text-sm text-[#5B5476] dark:text-gray-400">
                 <div className="flex -space-x-2">
                   {["1580489944761-15a19d654956", "1544005313-94ddf0286df2", "1573496359142-b8d87734a5a2"].map((id) => (
                     <img key={id} src={`https://images.unsplash.com/photo-${id}?w=80&h=80&fit=crop&crop=face`} className="w-8 h-8 rounded-full border-2 border-white" alt="" />
@@ -154,15 +154,15 @@ export default function Landing() {
               <div className="glass rounded-[2rem] p-6 shadow-[0_40px_80px_-40px_rgba(124,77,255,0.35)]">
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="md:col-span-2 rounded-2xl bg-white/80 dark:bg-white/5 p-6">
-                    <div className="text-xs uppercase tracking-[0.2em] text-gray-500">Life Balance Score</div>
+                    <div className="text-xs uppercase tracking-[0.2em] text-[#5B5476]">Life Balance Score</div>
                     <div className="mt-3 flex items-end gap-4">
-                      <span className="font-display text-7xl text-gray-900 dark:text-white">84</span>
-                      <span className="text-lg text-gray-500 mb-3">/100</span>
+                      <span className="font-display text-7xl text-[#1F1B2E] dark:text-white">84</span>
+                      <span className="text-lg text-[#5B5476] mb-3">/100</span>
                     </div>
                     <div className="mt-6 grid grid-cols-4 gap-3">
                       {[{k:"Career",v:82},{k:"Baby",v:91},{k:"Health",v:74},{k:"Learning",v:79}].map(x => (
                         <div key={x.k} className="rounded-xl p-3 bg-gradient-to-br from-white to-purple-50 dark:from-white/5 dark:to-white/0 border border-purple-100 dark:border-white/10">
-                          <div className="text-xs text-gray-500">{x.k}</div>
+                          <div className="text-xs text-[#5B5476]">{x.k}</div>
                           <div className="mt-1 font-display text-2xl">{x.v}</div>
                         </div>
                       ))}
@@ -186,20 +186,20 @@ export default function Landing() {
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeUp} className="max-w-2xl">
               <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">The reality</div>
-              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-gray-900 dark:text-white">Motherhood is beautiful. It's also a lot.</h2>
+              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-[#1F1B2E] dark:text-white">Motherhood is beautiful. It's also a lot.</h2>
             </motion.div>
             <div className="mt-14 grid md:grid-cols-3 gap-5">
               {PROBLEMS.map((p, i) => (
                 <motion.div key={p} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.05 }}>
-                  <Card className="rounded-3xl p-6 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                  <Card className="rounded-3xl p-6 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                     <div className="text-2xl">💭</div>
-                    <p className="mt-3 font-display text-xl italic text-gray-700 dark:text-gray-200">"{p}"</p>
+                    <p className="mt-3 font-display text-xl italic text-[#3F3A5A] dark:text-gray-200">"{p}"</p>
                   </Card>
                 </motion.div>
               ))}
             </div>
             <motion.div {...fadeUp} className="mt-16 text-center">
-              <p className="font-display text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[#7C4DFF] to-[#FFB6C1]">BloomNest AI solves all of these — in one calm place.</p>
+              <p className="font-display text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[#5B21D6] to-[#DB2777]">BloomNest AI solves all of these — in one calm place.</p>
             </motion.div>
           </div>
         </section>
@@ -209,19 +209,19 @@ export default function Landing() {
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeUp} className="max-w-2xl">
               <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">Everything, gently connected</div>
-              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-gray-900 dark:text-white">Six modules. One elegant system.</h2>
+              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-[#1F1B2E] dark:text-white">Six modules. One elegant system.</h2>
             </motion.div>
             <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {FEATURES.map((f, i) => {
                 const Icon = f.icon;
                 return (
                   <motion.div key={f.title} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.06 }}>
-                    <Card data-testid={`feature-card-${i}`} className="group rounded-3xl p-8 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgb(124,77,255,0.1)] transition-all duration-300 h-full">
+                    <Card data-testid={`feature-card-${i}`} className="group rounded-3xl p-8 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgb(124,77,255,0.1)] transition-all duration-300 h-full">
                       <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${f.color} flex items-center justify-center shadow-lg`}>
                         <Icon className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="mt-5 font-display text-2xl text-gray-900 dark:text-white">{f.title}</h3>
-                      <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">{f.desc}</p>
+                      <h3 className="mt-5 font-display text-2xl text-[#1F1B2E] dark:text-white">{f.title}</h3>
+                      <p className="mt-2 text-[#3F3A5A] dark:text-gray-300 leading-relaxed">{f.desc}</p>
                     </Card>
                   </motion.div>
                 );
@@ -235,21 +235,21 @@ export default function Landing() {
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeUp} className="max-w-2xl">
               <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">Loved by mothers</div>
-              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-gray-900 dark:text-white">Real stories, real relief.</h2>
+              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-[#1F1B2E] dark:text-white">Real stories, real relief.</h2>
             </motion.div>
             <div className="mt-14 grid md:grid-cols-3 gap-6">
               {TESTIMONIALS.map((t, i) => (
                 <motion.div key={t.name} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.08 }}>
-                  <Card className="rounded-3xl p-8 bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10 h-full">
+                  <Card className="rounded-3xl p-8 bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10 h-full">
                     <div className="flex gap-1 text-[#FFC107]">
                       {[...Array(5)].map((_, k) => <Star key={k} className="w-4 h-4 fill-current" />)}
                     </div>
-                    <p className="mt-4 font-display text-xl italic text-gray-800 dark:text-gray-100 leading-snug">"{t.quote}"</p>
+                    <p className="mt-4 font-display text-xl italic text-[#2A2540] dark:text-gray-100 leading-snug">"{t.quote}"</p>
                     <div className="mt-6 flex items-center gap-3">
                       <img src={t.avatar} alt={t.name} className="w-11 h-11 rounded-full object-cover" />
                       <div>
-                        <div className="font-semibold text-gray-900 dark:text-white">{t.name}</div>
-                        <div className="text-sm text-gray-500">{t.role}</div>
+                        <div className="font-semibold text-[#1F1B2E] dark:text-white">{t.name}</div>
+                        <div className="text-sm text-[#5B5476]">{t.role}</div>
                       </div>
                     </div>
                   </Card>
@@ -264,21 +264,21 @@ export default function Landing() {
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeUp} className="max-w-2xl">
               <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">Simple pricing</div>
-              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-gray-900 dark:text-white">Start free. Grow beautifully.</h2>
+              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-[#1F1B2E] dark:text-white">Start free. Grow beautifully.</h2>
             </motion.div>
             <div className="mt-14 grid md:grid-cols-3 gap-6">
               {PRICING.map((p) => (
                 <motion.div key={p.name} {...fadeUp}>
-                  <Card data-testid={`pricing-${p.name.toLowerCase()}`} className={`rounded-3xl p-8 h-full border ${p.featured ? "bg-gradient-to-br from-[#7C4DFF] to-[#B388FF] text-white border-transparent shadow-[0_30px_60px_-20px_rgba(124,77,255,0.5)]" : "bg-white/80 dark:bg-white/5 border-purple-50 dark:border-white/10"}`}>
+                  <Card data-testid={`pricing-${p.name.toLowerCase()}`} className={`rounded-3xl p-8 h-full border ${p.featured ? "bg-gradient-to-br from-[#7C4DFF] to-[#B388FF] text-white border-transparent shadow-[0_30px_60px_-20px_rgba(124,77,255,0.5)]" : "bg-white dark:bg-white/5 border-[#E9DFFF] dark:border-white/10"}`}>
                     <div className="flex items-center justify-between">
                       <h3 className="font-display text-2xl">{p.name}</h3>
                       {p.featured && <Badge className="rounded-full bg-white/20 text-white border-0">Most loved</Badge>}
                     </div>
                     <div className="mt-4 flex items-end gap-1">
                       <span className="font-display text-5xl">{p.price}</span>
-                      {p.suffix && <span className={p.featured ? "opacity-80 mb-2" : "text-gray-500 mb-2"}>{p.suffix}</span>}
+                      {p.suffix && <span className={p.featured ? "opacity-80 mb-2" : "text-[#5B5476] mb-2"}>{p.suffix}</span>}
                     </div>
-                    <p className={`mt-2 text-sm ${p.featured ? "opacity-90" : "text-gray-500"}`}>{p.desc}</p>
+                    <p className={`mt-2 text-sm ${p.featured ? "opacity-90" : "text-[#5B5476]"}`}>{p.desc}</p>
                     <ul className="mt-6 space-y-3">
                       {p.perks.map(perk => (
                         <li key={perk} className="flex items-start gap-2 text-sm">
@@ -305,14 +305,14 @@ export default function Landing() {
           <div className="max-w-4xl mx-auto px-6">
             <motion.div {...fadeUp} className="text-center">
               <div className="text-xs uppercase tracking-[0.25em] text-[#7C4DFF] font-semibold">Questions</div>
-              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-gray-900 dark:text-white">Honest answers</h2>
+              <h2 className="mt-3 font-display text-4xl sm:text-5xl text-[#1F1B2E] dark:text-white">Honest answers</h2>
             </motion.div>
             <div className="mt-14">
               <Accordion type="single" collapsible className="w-full">
                 {FAQS.map((f, i) => (
                   <AccordionItem key={i} value={`item-${i}`} className="border-b border-purple-100 dark:border-white/10">
                     <AccordionTrigger data-testid={`faq-${i}`} className="font-display text-xl text-left hover:no-underline">{f.q}</AccordionTrigger>
-                    <AccordionContent className="text-gray-600 dark:text-gray-300 leading-relaxed">{f.a}</AccordionContent>
+                    <AccordionContent className="text-[#3F3A5A] dark:text-gray-300 leading-relaxed">{f.a}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
@@ -335,8 +335,8 @@ export default function Landing() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 border-t border-purple-100 dark:border-white/10">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <footer className="py-12 border-t border-[#D9CCF5] dark:border-white/10">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#4B4568]">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-[#7C4DFF] to-[#FFB6C1] flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-white" />
